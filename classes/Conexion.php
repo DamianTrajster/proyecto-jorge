@@ -15,7 +15,7 @@ class Conexion {
         $dbPort = $env['DB_PORT'] ;
 
         try {
-            $dsn = "mysql:host=$dbServer;dbname=$dbName;charset=utf8mb4";
+            $dsn = "mysql:host=$dbServer;dbname=$dbName;port=$dbPort; charset=utf8mb4";
             $this->db = new PDO($dsn, $dbUser, $dbPass,[]);
         } catch (PDOException $e) {
             die("Error al conectar con MySQL: " . $e->getMessage());
