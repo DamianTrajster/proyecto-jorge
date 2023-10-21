@@ -1,12 +1,14 @@
 <?php
 
+
+
 class Conexion {
     protected PDO $db;
 
     public function __construct()
     {
         // Cargar variables de entorno desde el archivo .env
-        $env = parse_ini_file('.env');
+        $env = parse_ini_file(__DIR__ . '.env');
 
         $dbServer = $env['DB_SERVER'] ;
         $dbUser = $env['DB_USER'];
