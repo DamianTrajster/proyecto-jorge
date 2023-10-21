@@ -8,13 +8,13 @@ class Conexion {
     public function __construct()
     {
         // Cargar variables de entorno desde el archivo .env
-        $env = parse_ini_file(__DIR__ . '.env');
+        /* $env = parse_ini_file(__DIR__ . '.env'); */
 
-        $dbServer = $env['DB_SERVER'] ;
-        $dbUser = $env['DB_USER'];
-        $dbPass = $env['DB_PASS'];
-        $dbName = $env['DB_NAME'] ;
-        $dbPort = $env['DB_PORT'] ;
+        $dbServer = $_ENV['DB_SERVER'] ;
+        $dbUser = $_ENV['DB_USER'];
+        $dbPass = $_ENV['DB_PASS'];
+        $dbName = $_ENV['DB_NAME'] ;
+        $dbPort = $_ENV['DB_PORT'] ;
 
         try {
             $dsn = "mysql:host=$dbServer;dbname=$dbName;port=$dbPort; charset=utf8mb4";
